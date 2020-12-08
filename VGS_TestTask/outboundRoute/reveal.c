@@ -29,7 +29,7 @@ request(requestCardHolder,"cardHolder");
 request(requestCardNumber,"cardNumber"); 
 request(requestCardCVV,"cardCVV"); 
 
-FILE *filePointer = fopen("/var/www/localhost/json/.env", "r");
+FILE *filePointer = fopen("/<directory>/json/.env", "r"); // need to update this directory to your environment before compile
 
       if(filePointer == NULL) {
           perror("Unable to open file!");
@@ -59,7 +59,7 @@ FILE *filePointer = fopen("/var/www/localhost/json/.env", "r");
 		strcat(requestReveal,requestCardNumber);
 		strcat(requestReveal,"\",\"account_CVV\":\"");
 		strcat(requestReveal,requestCardCVV);
-		strcat(requestReveal,"\"}' > /var/www/localhost/json/revealVGS.json");  // touch point for the recieving the request and save it to a file on a permissible folder on
+		strcat(requestReveal,"\"}' > /<directory>/json/revealVGS.json");  //need to update this directory to your environment before compile; touch point for the recieving the request and save it to a file on a permissible folder on
 
 		//printf("json query :%s\r\n", requestReveal); // Debug only, not to show on html for security 
 
@@ -68,7 +68,7 @@ FILE *filePointer = fopen("/var/www/localhost/json/.env", "r");
 	system(requestReveal);
  
 
-filePointer = fopen("/var/www/localhost/json/revealVGS.json","r");
+filePointer = fopen("/<directory>/json/revealVGS.json","r"); // need to update this directory to your environment before compile
 fread(buffer, 1024, 1, filePointer);
 fclose(filePointer);
 
