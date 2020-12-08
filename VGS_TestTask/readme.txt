@@ -112,7 +112,7 @@ Now, you need to log in to VGS dashboard and follow the instructions above to cr
 
 Once you have created the proper routes, make sure to secure payload on the route as it appears on the log once you have requested the transaction on the following setup. 
 
-On the inboundRoute and outboundRoute open all the C files (.c extension) and update all the denoted <directory> and <vault_id> in the source code for your environment before compiling. Then open the inboundRoute/requestCardInfo.c and outboundRoute/revealCardInfo.c look for the url under the html <form> tag to copy over to your browser's url your web browser to start the front pages to enter your credit card data to be redact and reveal.
+On the inboundRoute and outboundRoute open all the C files (.c extension) and update all the denoted <directory> and <vault_id> in the source code for your environment before compiling. Then open the inboundRoute/requestCardInfo.c and outboundRoute/revealCardInfo.c look for the url under the html <form> tag to copy over to your browser's url for your web browser to start the front pages to enter your credit card data to be redact and reveal.
 
 Once you have submitted for redact, it will send the request to VGS to redact and pass back the Json file through Curl on the backend to touch and save as VGS.json file for the redacted data. As a result, you will see those data being redacted upon returning the result from the webpage.  
 
