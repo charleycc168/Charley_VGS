@@ -116,7 +116,7 @@ On the inboundRoute and outboundRoute open all the C files (.c extension) and up
 
 Once you have submitted for redact, it will send the request to VGS to redact and pass back the Json file through Curl on the backend to touch and save as VGS.json file for the redacted data. As a result, you will see those data being redacted upon returning the result from the webpage.  
 
-And when submitted for reveal, it will send the request to VGS to reveal and pass back the Json file through Curl on the backend to touch and save as revealVGS.json file for the revealed data. As a result, you will see those data be revealed upon returning the result from the webpage.
+And when submitted for reveal, it will get your username, password and vault_id credential from the .env file and send the request to VGS to reveal and pass back the Json file through Curl on the backend to touch and save as revealVGS.json file for the revealed data. As a result, you will see those data be revealed upon returning the result from the webpage.
 
 Now you are able to redact and reveal the credit card data, you can log into the VGS dashboard and change the reveal and redact on each field on these routes and you will get those results updated based on your selections, toggle and have fun!
 
