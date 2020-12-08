@@ -15,7 +15,7 @@ First log in to VGS sandbox:
 Notice that when you logged in the VGS, the sandbox vault automatically created your Access Credential (Settings: shown near the bottom navigation). 
 You may need to create another one since you may not get the password upon the first creation.  
 
-Link: https://dashboard.verygoodsecurity.com/dashboard/v/VLThYcqV9Vr75MpHquZj8CCdW/settings/access-credentials
+Link: https://dashboard.verygoodsecurity.com
 
 Vault credential (need to be save upon creation): 
 usr :<redacted username>
@@ -41,50 +41,17 @@ When you click in logs(left navigation link), you can secure payload on the rout
 The following is a working example for the above transaction:   
 
 On the inbound redaction snippet, run that in the unix command prompt, and you will get the redacted account number. 
-Copy, as sample: tok_sandbox_isp2aMHtmxPXcUt5EHvKEv  
-  
+    
 curl https://<vault_id>.SANDBOX.verygoodproxy.com/post \
   -H "Content-type: application/json" \
   -d '{"account_number": "ACC00000000000000000"}'
 
-------------------------------------------------------------------------
-
-# curl https://<vault_id>.sandbox.verygoodproxy.com/post \
->     -H "Content-type: application/json" \
->     -d '{"account_number": "ACC00000000000000000"}'
-{
-  "args": {},
-  "data": "{\"account_number\":\"tok_sandbox_isp2aMHtmxPXcUt5EHvKEv\"}",
-  "files": {},
-  "form": {},
-  "headers": {
-    "Accept": "*/*",
-    "Connection": "close",
-    "Content-Length": "55",
-    "Content-Type": "application/json",
-    "Host": "echo.apps.verygood.systems",
-    "User-Agent": "curl/7.69.1",
-    "Vgs-Request-Id": "b2a4d716b8fb80750bffc20c3f9bbc29",
-    "Vgs-Tenant": "tntg0mmqxqs",
-    "X-Forwarded-Host": "tntg0mmqxqs.sandbox.verygoodproxy.com"
-  },
-  "json": {
-    "account_number": "tok_sandbox_isp2aMHtmxPXcUt5EHvKEv"
-  },
-  "origin": "141.239.207.69, 52.6.216.177, 18.215.58.36, 10.22.113.146",
-  "url": "https://echo.apps.verygood.systems/post"
-}
----------------------------------------------------------------------------------
-
-  
-and paste it, as sample: tok_sandbox_isp2aMHtmxPXcUt5EHvKEv 
-	on the outbound revealing snippet with the vault credential for username and password substituted 
-
+Copy and paste the redacted account number on the outbound revealing snippet with the vault credential for username and password substituted 
 
 curl https://echo.apps.verygood.systems/post -k \
   -x <username>:<password>@tntcjymabmt.SANDBOX.verygoodproxy.com:8080 \
   -H "Content-type: application/json" \
-  -d '{"account_number": "tok_sandbox_isp2aMHtmxPXcUt5EHvKEv"}' 
+  -d '{"account_number": "<redacted account number>"}' 
 
 Then your will notice it reveal back to the original account number: 
 
@@ -101,12 +68,12 @@ Then your will notice it reveal back to the original account number:
     "Content-Type": "application/json",
     "Host": "echo.apps.verygood.systems",
     "User-Agent": "curl/7.69.1",
-    "Vgs-Request-Id": "256901f828fbb4e510c5540fe68c0b33"
+    "Vgs-Request-Id": "2569......."
   },
   "json": {
     "account_number": "ACC00000000000000000"
   },
-  "origin": "18.215.58.36, 10.22.104.52",
+  "origin": ".........",
   "url": "https://echo.apps.verygood.systems/post"
 }
 -----------------------------------------------------------------------
