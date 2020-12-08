@@ -1,0 +1,24 @@
+{
+  "args": {}, 
+  "data": "{\"account_holder\":\"tok_sandbox_jian6t27TiKDQ2pFhtJzrT\",\"account_number\":\"tok_sandbox_7dpk9Ba6MgRVaUR6949Fij\",\"account_CVV\":\"tok_sandbox_hSLRdxDaXxxodC2UFPCjSt\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Connection": "close", 
+    "Content-Length": "160", 
+    "Content-Type": "application/json", 
+    "Host": "echo.apps.verygood.systems", 
+    "User-Agent": "curl/7.69.1", 
+    "Vgs-Request-Id": "64cb965830d83c0bf509ef5af9683201", 
+    "Vgs-Tenant": "tntg0mmqxqs", 
+    "X-Forwarded-Host": "tntg0mmqxqs.sandbox.verygoodproxy.com"
+  }, 
+  "json": {
+    "account_CVV": "tok_sandbox_hSLRdxDaXxxodC2UFPCjSt", 
+    "account_holder": "tok_sandbox_jian6t27TiKDQ2pFhtJzrT", 
+    "account_number": "tok_sandbox_7dpk9Ba6MgRVaUR6949Fij"
+  }, 
+  "origin": "141.239.207.69, 52.6.216.177, 34.206.157.22, 10.22.80.46", 
+  "url": "https://echo.apps.verygood.systems/post"
+}
