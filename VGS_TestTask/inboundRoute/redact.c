@@ -32,7 +32,7 @@ char requestRedact[355];
 
 // Make sure to add fields accordingly in the Json path when login VGS dashboard on route: inbound
 
-strcpy(requestRedact,"curl https://tntg0mmqxqs.SANDBOX.verygoodproxy.com/post \\");  
+strcpy(requestRedact,"curl https://<vault_id>.SANDBOX.verygoodproxy.com/post \\");  // need to update this <vault_id> to your environment before compile
 strcat(requestRedact,"-H \"Content-type: application/json\" \\"); 
 
 strcat(requestRedact,"-d '{\"account_holder\": \"");
@@ -44,13 +44,13 @@ strcat(requestRedact,"\",\"account_CVV\":\"");
 
 strcat(requestRedact,requestCardCVV); 
 
-strcat(requestRedact,"\"}' > /var/www/localhost/json/VGS.json");  // touch point for the recieving the request and save it to a file on a permissible folder on the webserver directory    
+strcat(requestRedact,"\"}' > /<directory>/json/VGS.json");  //need to update this <directory> to your environment before compile; touch point for the recieving the request and save it to a file on a permissible folder on the webserver directory    
 
 //printf("Requesting through curl, sending for redaction: %s <br>",requestRedact); // Debug only, not to show on html for security  
 
 system(requestRedact);    
 
-file = fopen("/var/www/localhost/json/VGS.json","r");
+file = fopen("/<directory>/json/VGS.json","r"); //need to update this <directory> to your environment before compile
 fread(buffer, 1024, 1, file);
 fclose(file);
 
