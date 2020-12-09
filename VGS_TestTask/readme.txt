@@ -35,8 +35,13 @@ However the username and password for 'Revealing snippet' would not:it would jus
 At this point you need to substitute those username and password you kept on the vault credentials
 
 Secure Payload on route:
+You can use the VGS integration flow to secure traffic: go to VGS Collect navigation link on the left then go down to the 'secure traffic with our integration flow', click on the 'integration' link and click on Secure traffic. 
+Next you would enter the upstream host for inbound route, if not just use the default and proceed to etablish the connection.
+Then you can execute 'Code Snippets' or your execute your own inbound redact code to redact the data on the secured traffic connection you just established.
+Go back to the 'Logs' on the dashboard and you will see a icon with 3 disks and a magnifying glass which means you can now secure the payload.
+You can secure payload on the route by clicking on the route but 'Secure this payload button' will display and click to proceed.
 
-When you click in logs(left navigation link), you can secure payload on the route by clicking on the route but 'Secure this payload button' needs time to display at times.      
+You will get the option on the fields to be able to 'redact' or 'reveal' and press the button 'secure this payload' to proceed.
 
 The following is a working example for the above transaction:   
 
@@ -112,16 +117,13 @@ Now, you need to log in to VGS dashboard and follow the instructions above to cr
 
 Once you have created the proper routes, make sure to secure payload on the route as it appears on the log once you have requested the transaction on the following setup. 
 
-On the inboundRoute and outboundRoute open all the C files (.c extension) and update all the denoted <directory> and <vault_id> in the source code for your environment before compiling. Then open the inboundRoute/requestCardInfo.c and outboundRoute/revealCardInfo.c look for the url under the html <form> tag to copy over to your browser's url your web browser to start the front pages to enter your credit card data to be redact and reveal.
+On the inboundRoute and outboundRoute open all the C files (.c extension) and update all the denoted <directory> and <vault_id> in the source code for your environment before compiling. Then open the inboundRoute/requestCardInfo.c and outboundRoute/revealCardInfo.c look for the url under the html <form> tag to copy over to your browser's url for your web browser to start the front pages to enter your credit card data to be redact and reveal.
 
 Once you have submitted for redact, it will send the request to VGS to redact and pass back the Json file through Curl on the backend to touch and save as VGS.json file for the redacted data. As a result, you will see those data being redacted upon returning the result from the webpage.  
 
-And when submitted for reveal, it will send the request to VGS to reveal and pass back the Json file through Curl on the backend to touch and save as revealVGS.json file for the revealed data. As a result, you will see those data be revealed upon returning the result from the webpage.
+And when submitted for reveal, it will get your username, password and vault_id credential from the .env file and send the request to VGS to reveal and pass back the Json file through Curl on the backend to touch and save as revealVGS.json file for the revealed data. As a result, you will see those data be revealed upon returning the result from the webpage.
 
 Now you are able to redact and reveal the credit card data, you can log into the VGS dashboard and change the reveal and redact on each field on these routes and you will get those results updated based on your selections, toggle and have fun!
 
 Pretty cool!, 
 I enjoy it, learning, researching, coding, implementing and testing for the simple integration to really show the concept of data tokenization and how a company can bypass the liability of keeping the credit card info safe without the hassles.
-
-
- 
