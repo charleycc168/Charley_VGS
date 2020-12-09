@@ -35,8 +35,13 @@ However the username and password for 'Revealing snippet' would not:it would jus
 At this point you need to substitute those username and password you kept on the vault credentials
 
 Secure Payload on route:
+You can use the VGS integration flow to secure traffic: go to VGS Collect navigation link on the left then go down to the 'secure traffic with our integration flow', click on the 'integration' link and click on Secure traffic. 
+Next you would enter the upstream host for inbound route, if not just use the default and proceed to etablish the connection.
+Then you can execute 'Code Snippets' or your execute your own inbound redact code to redact the data on the secured traffic connection you just established.
+Go back to the 'Logs' on the dashboard and you will see a icon with 3 disks and a magnifying glass which means you can now secure the payload.
+You can secure payload on the route by clicking on the route but 'Secure this payload button' will display and click to proceed.
 
-When you click in logs(left navigation link), you can secure payload on the route by clicking on the route but 'Secure this payload button' needs time to display at times.      
+You will get the option on the fields to be able to 'redact' or 'reveal' and press the button 'secure this payload' to proceed.
 
 The following is a working example for the above transaction:   
 
